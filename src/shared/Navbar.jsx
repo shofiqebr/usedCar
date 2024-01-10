@@ -11,7 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+// import AdbIcon from '@mui/icons-material/Adb';
 import LogoImg from '../assets/img/Logo-white-PNG-Update.png';
 
 const pages = ['Products', 'Pricing', 'Blog'];
@@ -40,14 +40,16 @@ function Navbar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-        <img
+        {/* <img
             src={LogoImg}
             alt="Logo"
             style={{ 
                 height: '30px',
                 marginRight: 20,
             }}
-          />
+            // eslint-disable-next-line react/no-unknown-property
+            sx={{display: {xs:'none', md: 'flex'}, mr: 1}}
+          /> */}
           {/* <Typography
             variant="h6"
             noWrap
@@ -102,7 +104,17 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <img
+            src={LogoImg}
+            alt="Logo"
+            style={{ 
+                height: '30px',
+                marginRight: 20,
+            }}
+            // eslint-disable-next-line react/no-unknown-property
+            sx={{display:{xs: 'flex', md: 'none'}, mr: 1}}
+          />
+          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -120,8 +132,8 @@ function Navbar() {
             }}
           >
             LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          </Typography> */}
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
             {pages.map((page) => (
               <Button
                 key={page}
